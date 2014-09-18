@@ -10,9 +10,4 @@ validates :name, presence: true
 validates :password, presence: true
 validates_uniqueness_of :email
 
-private
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
 end
