@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: snack-over-fro-yo_development
+
+test:
+  adapter: postgresql
+  database: snack-over-fro-yo_test
