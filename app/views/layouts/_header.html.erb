@@ -25,8 +25,13 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign Up", new_user_path %></li>
-        <li><%= link_to "Log In", new_session_path %></li>
+        <% if current_user %>
+          <li class='login'>Logged in as <%= current_user.email %></li>
+          <li><%= link_to "Log Out", session_path("current"), method: 'delete' %></li>
+        <% else %>
+          <li><%= link_to "Log In", new_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

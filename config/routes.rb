@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => 'questions#index'
+  root :to => 'users#index'
   resources :sessions, only: [:create, :destroy, :new]
   resources :users
   resources :questions do
