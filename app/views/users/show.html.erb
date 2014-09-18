@@ -1,4 +1,9 @@
 <% content_for(:title, "#{@user.name} | SnackOverFroYo") %>
 
+<h1>It's <strong><%= @user.name %></strong>, everybody!</h1>
+<h2>His motherf%^&* email! <strong><%= @user.email %></strong></h2>
 
-<h1>It's <%= @user.name %>, everybody!</h1>
+<p><%= link_to "Edit User", edit_user_path, class: 'btn btn-primary' %></p>
+<p><%= link_to "Delete User", user_path, data: {confirm: "You're about to delete a user. Are you sure?",
+                                               method: "delete"},
+                                               class: "btn btn-danger" %></p>
