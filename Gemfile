@@ -9,6 +9,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt-ruby'
 gem 'bootstrap-sass'
+gem 'capybara'
+gem 'selenium'
+gem 'selenium-webdriver'
 
 group :development do
   gem 'better_errors'
