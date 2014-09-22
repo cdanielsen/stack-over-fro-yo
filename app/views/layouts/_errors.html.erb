@@ -1,0 +1,8 @@
+<% if @question.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+  <% @question.errors.full_messages.each do |message| %>
+    <li class="warnings"><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,8 @@
+$(".errors").empty();
+$("form").hide();
+$("#edit_question").show();
+$("#delete_question").show();
+$("#edit_headline").empty();
+$("#edit_content").empty();
+$("#edit_headline").append("<%= @question.headline %>");
+$("#edit_content").append("<%= @question.content %>");

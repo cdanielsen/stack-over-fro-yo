@@ -1,14 +1,17 @@
 <div class="row">
-  <h1 class="text-center">THE GODDAMN LIST!</h1>
+  <h1 class="text-center">THE LIST!</h1>
 </div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <ul class="unbullet">
       <% @questions.each_with_index do |question, i| %>
-        <li><%= link_to i+1, question_path(question) %>:  <%= question.content %></li>
+        <li id="<%= i+1 %>"><%= link_to i+1, question_path(question) %>:  <%= question.headline %></li>
         <% end %>
     </ul>
-
+  </div>
+  <div class ="col-md-3">
+    <div class="errors"></div>
+    <%= link_to "Ask new question", new_question_path, id: "new_question", remote: true, class: "btn btn-primary" %>
   </div>
 </div>
