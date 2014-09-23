@@ -1,5 +1,5 @@
 $(".errors").empty();
 $("#new_question").show();
-var index = parseInt($(".unbullet li:last-child").attr('id')) + 1;
-$(".unbullet").append('<li>' + '<a href="<%= question_path(@question) %>">' + index + '</a>' + ": " + '<%= @question.headline %>' + '</li>');
+var index = parseInt($(".question-list").children().last().children().first().attr("id")) + 1;
+$(".question-list").append('<td>' + '<a href="<%= question_path(@question) %>">' + index + '</a>' + ': ' + '<%= @question.headline %>' + '</td>' + '<td>' + 'by ' + '<%= @question.user.name %>' + '</td>');
 $("form").hide();

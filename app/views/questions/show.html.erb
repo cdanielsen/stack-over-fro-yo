@@ -17,11 +17,14 @@
   </div>
 <div class="col-md-6 col-md-offset-3">
   <div class="answers">
-    <ul class="unbullet">
+    <table class="table-striped">
       <% @answers.each do |answer| %>
-        <li><%= link_to answer.content, question_answer_path(@question, answer) %></li>
-        <% end %>
-    </ul>
+        <tr>
+          <td><%= link_to answer.content, question_answer_path(@question, answer) %></td>
+          <td>by <%= answer.user.name %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
   <%= render '/answers/form' %>
 </div>

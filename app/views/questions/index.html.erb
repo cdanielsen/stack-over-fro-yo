@@ -4,11 +4,16 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <ul class="unbullet">
-      <% @questions.each_with_index do |question, i| %>
-        <li id="<%= i+1 %>"><%= link_to i+1, question_path(question) %>:  <%= question.headline %></li>
+    <table class="table-striped">
+      <tbody class='question-list'>
+        <% @questions.each_with_index do |question, i| %>
+          <tr>
+            <td id="<%= i+1 %>"><%= link_to i+1, question_path(question) %>:  <%= question.headline %></td>
+            <td>by <%= question.user.name %></td>
+          </tr>
         <% end %>
-    </ul>
+      </tbody>
+    </table>
   </div>
   <div class ="col-md-3">
     <div class="errors"></div>
