@@ -10,6 +10,7 @@
         <%= f.label :content %>
         <%= f.text_field :content, class: 'form-control' %>
       </div>
+        <%#= f.hidden_field :user_id, :value => "#{@user.id}" %>
       <%= f.submit(class: "btn btn-primary") %>
     <% end %>
 

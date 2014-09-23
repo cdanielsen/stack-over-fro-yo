@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    # @user = User.find(params[:id])
     @question = Question.new(question_params)
     if @question.save
       respond_to do |format|
@@ -64,7 +65,7 @@ class QuestionsController < ApplicationController
 
   private
     def question_params
-      params.require(:question).permit(:headline, :content)
+      params.require(:question).permit(:headline, :content).merge(user_id: current_user.id)
     end
 
 end
