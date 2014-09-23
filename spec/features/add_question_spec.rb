@@ -10,7 +10,7 @@ describe "adding a question", js: true do
     fill_in 'Headline', with: 'Sample question'
     fill_in 'Content', with: 'sample content'
     click_button 'Create Question'
-    save_screenshot('/shot.png', full: true)
+    save_and_open_page
     expect(page).to have_content "New question created, bro!"
   end
 end

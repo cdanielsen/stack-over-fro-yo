@@ -12,7 +12,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # @user = User.find(params[:id])
     @question = Question.new(question_params)
     if @question.save
       respond_to do |format|
@@ -31,6 +30,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @answer = Answer.new
     @question = Question.find(params[:id])
   end
 

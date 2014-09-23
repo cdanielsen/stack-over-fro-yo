@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy, :new]
   resources :users
   resources :questions do
-    resources :answers, except: :show do
+    resources :answers, except: [:index] do
       resources :votes, only: [:create, :destroy]
     end
   end
